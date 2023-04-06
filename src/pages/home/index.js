@@ -49,6 +49,7 @@ export default function Home() {
         renderItem={({item}) => (
           <Card data={item}/>
         )}
+        showsVerticalScrollIndicator={false} 
       />
 
     </SafeAreaView>
