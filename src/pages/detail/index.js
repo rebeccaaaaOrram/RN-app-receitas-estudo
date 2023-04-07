@@ -50,7 +50,16 @@ export default function Detail() {
           <Ingredientes key={index} data={item} />
         ))
       }
-      <Instructions />
+      <View style={styles.instructionArea}>
+        <Text style={styles.instructionText}>Modo de preparo</Text>
+        <Feather name="arrow-down" size={20} color="#fff" />
+      </View>
+
+      {
+        route.params?.data.instructions.map((item, index) => (
+          <Instructions key={index} data={item} />
+        ))
+      }
     </ScrollView>
   );
 }
@@ -92,4 +101,20 @@ const styles = StyleSheet.create({
         fontSize: 14, 
         marginBottom: 14,
     },
+    instructionArea: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginBottom: 14,
+        marginTop: 14,
+        backgroundColor: '#4cbe6c',
+        padding: 10,
+        marginBottom: 14,
+        borderRadius: 5,
+    },
+    instructionText: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#fff',
+    }
 });
